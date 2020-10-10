@@ -1,6 +1,7 @@
 // home.module.ts
 
 import { Component } from '@angular/core';
+import { CalendarComponentOptions } from 'ion2-calendar'
 
 @Component({
   selector: 'app-home',
@@ -9,12 +10,12 @@ import { Component } from '@angular/core';
 })
 
 export class HomePage {
-  date: string;
+  dateMulti: string[];
   type: 'string';
+  
+  optionsMulti: CalendarComponentOptions = {
+    pickMode: 'multi'
+  };
 
   constructor() { }
-
-  onChange($event) {
-    console.log($event);
-  }
 }
