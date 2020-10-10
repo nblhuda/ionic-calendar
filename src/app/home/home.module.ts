@@ -1,6 +1,6 @@
 // home.module.ts
 
-import { NgModule } from '@angular/core';
+import { NgModule , LOCALE_ID} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
@@ -25,7 +25,9 @@ import { CalendarModule } from 'ion2-calendar';
     ]),
     CalendarModule
   ],
-  declarations: [HomePage]
+  declarations: [HomePage],
+  providers: [{ provide: LOCALE_ID, useValue: 'zh-CN' }]
 })
 
 export class HomePageModule {}
+

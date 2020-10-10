@@ -1,5 +1,3 @@
-// home.module.ts
-
 
 import { Component } from '@angular/core';
 import { CalendarComponentOptions } from 'ion2-calendar'
@@ -15,7 +13,10 @@ export class HomePage {
   type: 'string';
   
   optionsRange: CalendarComponentOptions = {
-    pickMode: 'range'
+    monthFormat: 'YYYY 年 MM 月 ',
+    weekdays: ['天', '一', '二', '三', '四', '五', '六'],
+    weekStart: 1,
+    defaultDate: new Date()
   };
 
   constructor() { }
