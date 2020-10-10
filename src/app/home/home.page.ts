@@ -1,5 +1,6 @@
 // home.module.ts
 
+
 import { Component } from '@angular/core';
 import { CalendarComponentOptions } from 'ion2-calendar'
 
@@ -10,11 +11,11 @@ import { CalendarComponentOptions } from 'ion2-calendar'
 })
 
 export class HomePage {
-  dateMulti: string[];
+  dateRange: { from: string; to: string; };
   type: 'string';
   
-  optionsMulti: CalendarComponentOptions = {
-    pickMode: 'multi'
+  optionsRange: CalendarComponentOptions = {
+    pickMode: 'range'
   };
 
   constructor() { }
