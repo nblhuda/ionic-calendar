@@ -26,7 +26,8 @@ export class HomePage {
   ) { }
   async openCalendar() {
     const options: CalendarModalOptions = {
-      title: 'BASIC',
+      pickMode: 'multi',
+      title: 'Multi',
       color:'danger'
     };
 
@@ -36,5 +37,9 @@ export class HomePage {
   });
 
   myCalendar.present();
+}
+
+ngOnInit(){
+  this.openCalendar()
 }
 }
