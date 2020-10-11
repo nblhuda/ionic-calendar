@@ -1,6 +1,8 @@
 
 import { Component } from '@angular/core';
 import { CalendarComponentOptions } from 'ion2-calendar'
+import { ModalController } from '@ionic/angular';
+import { CalendarModal, CalendarModalOptions } from 'ion2-calendar';
 
 @Component({
   selector: 'app-home',
@@ -19,5 +21,20 @@ export class HomePage {
     defaultDate: new Date()
   };
 
-  constructor() { }
+  constructor(
+    public modalCtrl: ModalController
+  ) { }
+  async openCalendar() {
+    const options: CalendarModalOptions = {
+      title: 'BASIC',
+      color:'danger'
+    };
+
+  let myCalendar =  await this.modalCtrl.create({
+    component: CalendarModal,
+    componentProps: { options }
+  });
+
+  myCalendar.present();
+}
 }
